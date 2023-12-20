@@ -1,11 +1,8 @@
 import FacebookProvider from "next-auth/providers/facebook";
 import GoogleProvider from "next-auth/providers/google";
 import TwitterProvider from "next-auth/providers/twitter";
-import { FirestoreAdapter } from "@auth/firebase-adapter";
-import firestore from "../../config/firebase";
 
 export const options = {
-    adapter: FirestoreAdapter(firestore),
     providers: [
         FacebookProvider({
             clientId: process.env.FACEBOOK_APP_ID,

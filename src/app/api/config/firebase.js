@@ -6,7 +6,7 @@ import { initFirestore } from "@auth/firebase-adapter";
 export const firebaseConfig = {
   apiKey: process.env.FIREBASE_API_KEY,
   authDomain: process.env.FIREBASE_AUTH_DOMAIN,
-  projectId: process.env.FIREBASE_PROJECT_ID,
+  projectId: JSON.parse(process.env.FIREBASE_PRIVATE_KEY),
   storageBucket: process.env.FIREBASE_STORAGE,
   messagingSenderId: process.env.FIREBASE_SENDER_ID,
   appId: process.env.FIREBASE_APP_ID,
@@ -19,7 +19,7 @@ if (!admin.apps.length) {
 
 export const firestore = initFirestore({
   credential: cert({
-    projectId: process.env.FIREBASE_PROJECT_ID,
+    projectId: JSON.parse(process.env.FIREBASE_PRIVATE_KEY),
     clientEmail: process.env.FIREBASE_CLIENT_EMAIL,
     privateKey: process.env.FIREBASE_PRIVATE_KEY,
   })

@@ -1,9 +1,12 @@
 "use client"
 import Image from "next/image";
 import Link from "next/link";
-import { signIn, signOut, useSession } from 'next-auth/react';
+import { getServerSession } from "next-auth";
+import { signIn, signOut } from 'next-auth/react';
+import { options } from "../api/auth/[...nextauth]/options";
+
 export default function Navbar() {
-    const { data: session, status } = useSession()
+    const session = getServerSession(options)
 
     return (
         <nav className="flex items-center justify-between gap-5">

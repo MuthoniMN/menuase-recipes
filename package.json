@@ -24,5 +24,10 @@
     "eslint-config-next": "14.0.4",
     "postcss": "^8",
     "tailwindcss": "^3.3.0"
+  },
+  "browser": {
+    "tls": false,
+    "net": false,
+    "fs": false
   }
 }

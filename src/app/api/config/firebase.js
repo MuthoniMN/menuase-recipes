@@ -1,6 +1,6 @@
-import { getFirestore } from "firebase-admin/firestore";
 import admin from "firebase-admin";
 import { initializeApp } from "firebase-admin/app";
+import { cert } from "firebase-admin/app"
 
 export const firebaseConfig = {
   apiKey: process.env.FIREBASE_API_KEY,
@@ -15,6 +15,11 @@ export const firebaseConfig = {
 if (!admin.apps.length) {
   const app = initializeApp(firebaseConfig);
 }
-const firestore =  getFirestore(admin.apps[0]);
 
-export default firestore;
+export const firestore = initFirestore({
+  credential: cert({
+    projectId: process.env.FIREBASE_PROJECT_ID,
+    clientEmail: process.env.FIREBASE_CLIENT_EMAIL,
+    privateKey: process.env.FIREBASE_PRIVATE_KEY,
+  })
+})

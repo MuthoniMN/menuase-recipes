@@ -5,7 +5,7 @@ import TwitterProvider from "next-auth/providers/twitter";
 import { FirestoreAdapter } from "@auth/firebase-adapter";
 import firestore from "../../config/firebase";
 
-const options = {
+export const options = {
     adapter: FirestoreAdapter(firestore),
     providers: [
         FacebookProvider({

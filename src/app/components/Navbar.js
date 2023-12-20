@@ -25,6 +25,9 @@ export default function Navbar(){
                 <li>
                     <Link href={"/faq"}>FAQ</Link>
                 </li>
+                <li>
+                    <Link href={"/mealplan"}>Generate a Meal Plan</Link>
+                </li>
             </ul>
             {status === "unauthenticated" && 
             <button onClick={() => signIn()} className="px-5 py-2 rounded bg-red-600 hover:bg-red-400 transition-all hover:font-bold">Sign in</button>

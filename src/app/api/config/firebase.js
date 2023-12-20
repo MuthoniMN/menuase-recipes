@@ -16,7 +16,7 @@ export const firebaseConfig = {
 if (!admin.apps.length) {
   const app = initializeApp(firebaseConfig);
 }
-const { privateKey } = JSON.parse(process.env.FIREBASE_CREDS_JSON)
+const { privateKey } = JSON.parse(process.env.FIREBASE_PRIVATE_KEY)
 export const firestore = initFirestore({
   credential: cert({
     projectId: process.env.FIREBASE_PROJECT_ID,

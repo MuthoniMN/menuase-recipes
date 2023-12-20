@@ -1,6 +1,7 @@
 import admin from "firebase-admin";
 import { initializeApp } from "firebase-admin/app";
-import { cert } from "firebase-admin/app"
+import { cert } from "firebase-admin/app";
+import { initFirestore } from "@auth/firebase-adapter";
 
 export const firebaseConfig = {
   apiKey: process.env.FIREBASE_API_KEY,
